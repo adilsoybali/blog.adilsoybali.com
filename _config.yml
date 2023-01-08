@@ -21,7 +21,7 @@ timezone:
 
 title: Adil's Blog                          # the main title
 
-tagline: My personal blog.   # it will display as the sub-title
+tagline: My personal blog   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   My personal blog where I write about cyber security. Technical articles and cyber security news are shared on this site.
